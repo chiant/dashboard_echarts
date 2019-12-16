@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" ; charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<!--
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+-->
+
+<!--    <link rel="stylesheet" type="text/css" href="../p001/css/style.css" />-->
+    <link rel="stylesheet" type="text/css" href="../p001/css/index.css" />
+
+    <title>经营数据分析预警系统</title>
+</head>
+
+
+<!--其中MaxDate变量传来的值赋值给数据更新-->
+
+<body>
+    <div>
+        <div class="top-banner">
+            <div class="header-date">数据更新至：<span id="maxDate"></span> (演示数据)</div>
+            <div class="header-title">经营数据分析预警系统</div>
+            <div class="page-theme">
+                <p class="p-selected">页面主题风格：
+                    <a class="a-unselected" id="infographic" href="javascript:void(0)" onclick="changeTheme(this.id)">农商红</a> |
+                    <!-- <a class="a-selected" id="roma" href="javascript:void(0)" onclick="changeTheme(this.id)">罗马红</a> |-->
+                    <a class="a-unselected" id="dark" href="javascript:void(0)" onclick="changeTheme(this.id)">酷黑蓝</a> |
+                    <!--                    <a class="a-unselected" id="macarons" href="javascript:void(0)" onclick="changeTheme(this.id)">小清新</a> |-->
+                    <a class="a-unselected" id="shine" href="javascript:void(0)" onclick="changeTheme(this.id)">萌橄绿</a> |
+                    <!--                    <a class="a-unselected" id="vintage" href="javascript:void(0)" onclick="changeTheme(this.id)">羊皮纸</a>-->
+                </p>
+            </div>
+
+        </div>
+
+        <div class="select-area">
+
+            <div class="select-biz">
+                <p class="p-selected">选择科目：
+                    <a class="a-selected" id="资产规模" href="javascript:void(0)" onclick="selBiz(this.id)">资产规模</a> |
+                    <a class="a-unselected" id="各项贷款" href="javascript:void(0)" onclick="selBiz(this.id)">各项贷款 ▼</a> |
+                    <a class="a-unselected" id="各项存款" href="javascript:void(0)" onclick="selBiz(this.id)">各项存款 ▼</a> |
+                    <a class="a-unselected" id="选中资产" href="javascript:void(0)" onclick="selBiz(this.id)"></a>
+                </p>
+            </div>
+            <div class="select-indicator">
+                <p class="p-selected">选择指标：
+                    <a class="a-selected" id="当前余额" href="javascript:void(0)" onclick="changeMetrics(this.id)">当前余额</a> |
+                    <select id="增量指标" class="a-unselected-select" onchange="changeMetrics(this.value)">
+                        <option value="增量指标 ▼" selected hidden=true>增量指标 ▼</option>
+                        <option value="日增量">日增量</option>
+                        <option value="月增量">月增量</option>
+                        <option value="年比增量">年比增量</option>
+                        <option value="年初增量">年初增量</option>
+                        <option value="年初多增量">年初多增量</option>
+                        <select>|
+                            <select id="比率指标" class="a-unselected-select" onchange="changeMetrics(this.value)">
+                                <option value="比率指标 ▼" hidden=true>比率指标 ▼</option>
+                                <option value="日环比">日环比</option>
+                                <option value="月初比">月初比</option>
+                                <option value="年同比">年同比</option>
+                                <option value="年初比">年初比</option>
+                                <option value="年初多增比">年初多增比</option>
+                            </select>|
+                            <a id="选中指标" class="a-selected"></a>
+                </p>
+            </div>
+            <div class="select-map">
+                <p class="p-selected">选择区域：
+                    <a class="a-selected" id="重庆全境" href="javascript:void(0)" onclick="changeMap(this.id)">重庆全境</a> |
+                    <a class="a-unselected" id="主城区" href="javascript:void(0)" onclick="changeMap(this.id)">主城区</a> |
+                    <a class="a-unselected" id="主城外圈" href="javascript:void(0)" onclick="changeMap(this.id)">主城外圈</a> |
+                    <a class="a-unselected" id="渝东北翼" href="javascript:void(0)" onclick="changeMap(this.id)">渝东北翼</a> |
+                    <a class="a-unselected" id="渝东南翼" href="javascript:void(0)" onclick="changeMap(this.id)">渝东南翼</a> |
+                    <a class="a-unselected" id="选中区县" href="javascript:void(0)"></a>
+                </p>
+            </div>
+        </div>
+        <div class="biz-panel" id="bizPanel"></div>
+        <div class="data-panel">
+            <div class="leftdata-panel">
+                <div class="maindata-panel">
+                    <div class="gaugedata-panel" id="gaugeData"></div>
+                    <div class="tsdata-panel" id="TSData"></div>
+                </div>
+
+                <div class="groupdata-panel">
+                    <div class="grpbardata-panel" id="grpBarData"></div>
+                    <div class="grptsdata-panel" id="grpTSData"></div>
+                </div>
+
+            </div>
+
+            <div class="mapdata-panel" id="mapStat">
+
+            </div>
+            <div class="view-switch" id="viewSwitch"><a id="toggleMapView" href="javascript:void(0)" onclick="toggleMapView()">分支行排名视图</a></div>
+
+
+        </div>
+    </div>
+</body>
+
+<script src="../common/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../common/js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="../common/map/chongqing.js" type="text/javascript" charset="utf-8"></script>
+<script src="../common/map/chongqing_downtown.js" type="text/javascript" charset="utf-8"></script>
+<script src="../common/map/chongqing_suburb.js" type="text/javascript" charset="utf-8"></script>
+<script src="../common/map/chongqing_northeast.js" type="text/javascript" charset="utf-8"></script>
+<script src="../common/map/chongqing_southeast.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script src="../p001/js/data_offline.js" type="text/javascript" charset="utf-8"></script>
+<script src="../p001/js/initialize.js" type="text/javascript" charset="utf-8"></script>
+<script src="../p001/js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

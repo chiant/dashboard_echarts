@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+*.a-unselected {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+*.a-selected {
+    color: #c12e34;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+*.p-selected {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/*****************************************************************/
+/* 导航头部 */
+.top-banner {
+    /*    position: relative;*/
+    width: 100%;
+    height: 15%;
+    background: #b32c26;
+    display: flex;
+}
+
+/* 日期 */
+.top-banner .header-date {
+    width: 40%;
+    line-height: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+    margin-left: 1%;
+    margin-top: 0.8%;
+    margin-bottom: 0.5%;
+}
+
+
+/* 标题 */
+.top-banner .header-title {
+    width: 60%;
+    line-height: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+/* 主题风格选择 */
+.top-banner .page-theme {
+    width: 40%;
+    height: 15%;
+    line-height: 100%;
+    text-align: right;
+    vertical-align: middle;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+}
+
+
+.top-banner .page-theme p {
+    color: bcolor;
+    font-weight: bold;
+}
+
+
+
+/*数据选择区*/
+.select-area {
+    position: relative;
+    /*    float:left;*/
+    width: 100%;
+    height: 15%;
+    background: #ea8147;
+    display: flex;
+}
+
+.select-area .select-biz {
+    width: 50%;
+    height: 20px;
+    line-height: 20px;
+    text-align: middle;
+    vertical-align: middle;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-left: 0.5%;
+}
+
+/*选择指标的位置调整*/
+.select-area .select-indicator {
+    width: 50%;
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: middle;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-left: 0.5%;
+}
+
+
+.select-area .select-indicator p {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/*选择区域的位置调整*/
+.select-area .select-map {
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    vertical-align: middle;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-right: 0.5%;
+}
+
+.select-area .select-map p {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+.biz-panel {
+    display: none;
+    position: relative;
+    /*    float: left;*/
+    width: 100%;
+    height: 30%;
+    bottom: 0px;
+    padding: 0px;
+    /*    科目的树状选择图cornsilk*/
+    background: #ebebeb;    
+    /*
+    border-style: solid;
+    border-color: dimgray;
+    border-width: 2px;  
+*/
+}
+
+/*数据展示区*/
+.data-panel {
+    display: flex;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 70%;
+    bottom: 0px;
+    padding: 0px;
+    margin-left: 1%;
+}
+
+/*数据展示区=>地图展示区*/
+.data-panel .mapdata-panel {
+    display：flex;
+    position: relative;
+    float: left;
+    width: 40%;
+    height: 70%;
+    padding: 0px;
+}
+
+.data-panel .view-switch {
+    display: block;
+    position: absolute;
+    height: 3%;
+    width: 16%;
+    top: 2%;
+    right: 2%;
+    float: none;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: right;
+}
+
+/*数据展示区=>右部数据展示区*/
+.data-panel .leftdata-panel {
+    float: left;
+    position: relative;
+    left: left;
+    width: 60%;
+    padding: 0px;
+    /*
+    border-style: solid;
+    border-width: 2px;    
+*/
+
+}
+
+/*数据展示区=>统计数据展示区=>右上区*/
+
+.data-panel .leftdata-panel .maindata-panel {
+    display: flex;
+    position: relative;
+    top: top;
+    height: 50%;
+    width: 100%;
+    padding: 0px;
+}
+
+
+/*数据展示区=>统计数据展示区=>右下区*/
+.data-panel .leftdata-panel .groupdata-panel {
+    display: flex;
+    position: relative;
+    bottom: 0%;
+    height: 50%;
+    width: 100%;
+    padding: 0px;
+}
+
+
+/*数据展示区=>统计数据展示区=>右上区=>仪表盘区*/
+.data-panel .leftdata-panel .maindata-panel .gaugedata-panel {
+    width: 35%;
+    height: 100%;
+    padding: 0px;
+    /*
+    border-style: solid;
+    border-width: 2px;       
+*/
+}
+
+/*数据展示区=>统计数据展示区=>右上区=>时间序列区*/
+.data-panel .leftdata-panel .maindata-panel .tsdata-panel {
+
+    right: 0%;
+    bottom: 0%;
+    width: 65%;
+    padding: 0px;
+}
+
+
+/*数据展示区=>统计数据展示区=>右下区=>饼图*/
+.data-panel .leftdata-panel .groupdata-panel .grpbardata-panel {
+
+    width: 35%;
+    padding: 0px;
+    /*
+    border-style: solid;
+    border-width: 2px;
+*/
+}
+
+/*数据展示区=>统计数据展示区=>右下区=>分组时间序列图*/
+
+.data-panel .leftdata-panel .groupdata-panel .grptsdata-panel {
+    right: 0%;
+    width: 65%;
+    padding: 0px;
+    /*
+    border-style: solid;
+    border-width: 2px;
+*/
+}
+
+
+/*数据展示区=>选择指标区域 增加了手形的改变*/
+.a-unselected-select {
+    background: none;
+    border: 0;
+    font-size: 15px;
+    color: #fff;
+    text-align: middle;
+    text-align-last: middle;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.a-unselected-select option {
+    background: none;
+    color: #333;
+    width: auto;
+    text-align: middle;
+    text-align-last: center;
+    text-align: middle;
+}
+
